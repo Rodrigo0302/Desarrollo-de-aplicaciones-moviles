@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Lab01</string>
+    <string name="calculator_app">Calculator App</string>
+    <string name="the_result">The Result</string>
+    <string name="plusSymbol">+</string>
+    <string name="DivedeSymbol">/</string>
+    <string name="MultiplySymbol">x</string>
+    <string name="MinusSymbol">-</string>
+    <string name="ingresa_un_numero">Ingresa un numero</string>
+    <string name="numero">Numero</string>
+</resources>
