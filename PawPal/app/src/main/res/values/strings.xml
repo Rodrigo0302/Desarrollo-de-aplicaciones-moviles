@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">PawPal</string>
+    <string name="logo_description">Logo de la aplicacion, un corazon con una huella</string>
+    <string name="login_button_text">Iniciar Sesión</string>
+    <string name="register_text">¡Regístrate aquí!</string>
+    <string name="correo">Correo</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="nombre">Nombre</string>
+    <string name="fecha_de_nacimiento">Fecha de nacimiento</string>
+    <string name="repetir_contrase_a">Confirmar Contraseña</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="nombre_de_mascota">Nombre de mascota</string>
+    <string name="tipo_de_mascota">Tipo de mascota:</string>
+    <string name="agregar_mascota">Agregar mascota</string>
+    <string name="foto_de_la_mascota">Foto de la mascota</string>
+    <string name="seleccionar_foto">Seleccionar foto</string>
+    <string name="nombre_de_la_mascota">Nombre de la mascota</string>
+    <string name="registrar_mascota">Registrar Mascota</string>
+    <string name="edad">Edad</string>
+    <string name="peso">Peso</string>
+    <string name="raza">Raza</string>
+    <string name="modificar_mascota">Modificar Datos Mascota</string>
+    <string name="eliminar_mascota">Eliminar Mascota</string>
+
+    <string-array name="spinner_items">
+        <item>Perro</item>
+        <item>Gato</item>
+        <item>Pez</item>
+        <item>Pajaro</item>
+        <item>Otro</item>
+    </string-array>
 </resources>

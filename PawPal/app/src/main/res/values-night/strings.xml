@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="logo_description">Logo de la aplicacion, un corazon con una huella</string>
+    <string name="login_button_text">Iniciar Sesión</string>
+    <string name="register_text">¡Regístrate aquí!</string>
+</resources>

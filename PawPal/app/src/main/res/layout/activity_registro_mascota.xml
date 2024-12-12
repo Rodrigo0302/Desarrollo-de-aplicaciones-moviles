@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".RegistroUsuarioActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- Título -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/topBarColor"
+            android:minHeight="?attr/actionBarSize"
+            app:popupTheme="@style/CustomToolbarTheme"
+            app:titleTextColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="Registro de mascota"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintVertical_bias="1.0"
+            tools:layout_editor_absoluteX="0dp"
+            android:padding="16dp">
+
+
+
+            <!-- Foto de la mascota -->
+            <ImageView
+                android:id="@+id/ivFotoMascota"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_add_photo"
+                android:contentDescription="@string/foto_de_la_mascota"
+                android:layout_gravity="center"
+                android:layout_marginBottom="30dp"
+                android:scaleType="centerCrop"
+                android:clickable="true"/>
+
+
+
+            <!-- Nombre de la mascota -->
+            <EditText
+                android:id="@+id/etNombreMascota"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nombre_de_la_mascota"
+                android:drawableStart="@drawable/ic_paw"
+                android:inputType="textPersonName"
+                android:autofillHints="name"
+                android:drawablePadding="8dp"
+                android:padding="12dp"
+                android:background="@drawable/edit_text_background"
+                android:layout_marginBottom="26dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/material_dynamic_neutral80"/>
+
+            <!-- Tipo de mascota -->
+            <Spinner
+                android:id="@+id/spTipoMascota"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="26dp"
+                android:dropDownWidth="50dp"
+                android:spinnerMode="dialog"
+
+                />
+
+            <!-- Raza -->
+            <EditText
+                android:id="@+id/etRaza"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="name"
+                android:inputType="text"
+                android:hint="@string/raza"
+                android:drawableStart="@drawable/ic_paw_type"
+                android:drawablePadding="8dp"
+                android:padding="12dp"
+                android:layout_marginBottom="26dp"
+                android:background="@drawable/edit_text_background"
+                android:textColor="@color/black"
+                android:textColorHint="@color/material_dynamic_neutral80"/>
+
+            <!-- Edad y peso -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="30dp">
+
+                <EditText
+                    android:id="@+id/etEdad"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/edad"
+                    android:autofillHints="number"
+                    android:inputType="number"
+                    android:drawableStart="@drawable/ic_cake"
+                    android:drawablePadding="8dp"
+                    android:padding="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/edit_text_background"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/material_dynamic_neutral80"/>
+
+                <EditText
+                    android:id="@+id/etPeso"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:autofillHints="weight"
+                    android:hint="@string/peso"
+                    android:inputType="numberDecimal"
+                    android:drawableStart="@drawable/ic_weight"
+                    android:drawablePadding="8dp"
+                    android:padding="12dp"
+                    android:background="@drawable/edit_text_background"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/material_dynamic_neutral80"/>
+            </LinearLayout>
+
+            <!-- Botón de registro -->
+            <Button
+                android:id="@+id/btnRegistrarMascota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/registrar_mascota"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/topBarColor" />
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
