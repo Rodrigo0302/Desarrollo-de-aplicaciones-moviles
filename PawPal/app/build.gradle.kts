@@ -9,6 +9,9 @@ android {
     namespace = "com.example.pawpal"
     compileSdk = 35
 
+    buildFeatures{
+        viewBinding =true
+    }
 
     defaultConfig {
         applicationId = "com.example.pawpal"
@@ -44,6 +47,8 @@ android {
     }
 }
 
+
+
 dependencies {
     implementation(libs.androidx.ui.text.android)
     implementation(libs.protolite.well.known.types)
@@ -53,12 +58,15 @@ dependencies {
     implementation("androidx.room:room-ktx:$roomVersion")
 
     // Otros
-    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.core:core-ktx:1.13.0")
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.11.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
     implementation("androidx.cardview:cardview:1.0.0")
+
+
+    implementation(libs.androidx.work.runtime.ktx)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -68,4 +76,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //Añadir dependencia del calendario
+    implementation("com.applandeo:material-calendar-view:1.9.2")
 }

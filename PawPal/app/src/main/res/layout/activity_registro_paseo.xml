@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".RegistroPaseoActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- Título -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/topBarColor"
+            android:minHeight="?attr/actionBarSize"
+            app:popupTheme="@style/CustomToolbarTheme"
+            app:titleTextColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="Registro de Paseo"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintVertical_bias="1.0"
+            tools:layout_editor_absoluteX="0dp"
+            android:padding="16dp">
+
+
+
+            <!-- Titulo -->
+            <EditText
+                android:id="@+id/RegTituloEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:autofillHints=" "
+                android:background="@drawable/edit_text_background"
+                android:drawableStart="@drawable/ic_pet_placeholder"
+                android:drawablePadding="8dp"
+                android:hint="@string/titulo"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/material_dynamic_neutral50" />
+
+            <!-- Descripcion -->
+            <EditText
+                android:id="@+id/RegDescripcionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:autofillHints=" "
+                android:background="@drawable/edit_text_background"
+                android:drawableStart="@drawable/ic_edit"
+                android:drawablePadding="8dp"
+                android:hint="Descripción"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/material_dynamic_neutral50" />
+
+            <!-- Duracion -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/seleccionar_duraci_n_hh_mm_ss"
+                android:textSize="18sp"
+                android:layout_gravity="center_horizontal"
+                android:drawablePadding="8dp"
+                app:drawableStartCompat="@drawable/ic_timer" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <NumberPicker
+                android:id="@+id/npHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <NumberPicker
+                android:id="@+id/npMinutes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <NumberPicker
+                android:id="@+id/npSeconds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+            <!-- km recorridos -->
+            <EditText
+                android:id="@+id/RegKMEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:autofillHints=" "
+                android:background="@drawable/edit_text_background"
+                android:drawableStart="@drawable/ic_paseos"
+                android:drawablePadding="8dp"
+                android:hint="KM recorridos"
+                android:inputType="numberDecimal"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/material_dynamic_neutral50" />
+
+
+
+            <!-- Fecha y hora -->
+            <EditText
+                android:id="@+id/RegFechaPaseoEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:autofillHints=""
+                android:background="@drawable/edit_text_background"
+                android:clickable="true"
+                android:drawableEnd="@drawable/ic_calendar_paseo"
+                android:drawablePadding="8dp"
+                android:focusable="false"
+                android:hint="Fecha del paseo "
+                android:inputType="date"
+                android:maxLines="1"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/material_dynamic_neutral50" />
+
+            <!-- Botón de registro-->
+            <Button
+                android:id="@+id/regiserPaseoButton"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="70dp"
+                android:backgroundTint="@color/topBarColor"
+                android:padding="12dp"
+                android:text="Registrar Paseo"
+                android:textColor="@android:color/black" />
+
+
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

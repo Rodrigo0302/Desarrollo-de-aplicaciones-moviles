@@ -1,14 +1,13 @@
-package com.example.pawpal
+package com.example.pawpal.utils
 
-import android.annotation.SuppressLint
 import android.graphics.BitmapFactory
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.pawpal.R
 import com.example.pawpal.data.database.entities.Mascota
 import java.io.File
 

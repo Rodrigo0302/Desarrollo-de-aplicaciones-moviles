@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="#B8EFCD">
+
+    <TextView
+        android:id="@+id/tvCitaTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Asunto de la cita"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvCitaDia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fecha: "
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/tvCitaTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hora: "
+        android:textSize="16sp"/>
+</LinearLayout>

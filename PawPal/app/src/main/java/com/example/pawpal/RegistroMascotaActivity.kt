@@ -18,6 +18,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.pawpal.data.database.PawPalDatabase
 import com.example.pawpal.data.database.entities.Mascota
+import com.example.pawpal.utils.SessionManager
 import kotlinx.coroutines.launch
 import java.io.File
 import java.io.FileOutputStream

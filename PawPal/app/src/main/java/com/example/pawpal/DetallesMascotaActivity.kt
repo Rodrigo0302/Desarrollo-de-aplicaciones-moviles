@@ -6,12 +6,11 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.view.menu.MenuBuilder
 import androidx.appcompat.widget.Toolbar
 import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
@@ -25,6 +24,7 @@ import kotlinx.coroutines.withContext
 import java.io.File
 
 class DetallesMascotaActivity : AppCompatActivity() {
+    private var mascotaId: Int = -1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -49,8 +49,33 @@ class DetallesMascotaActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+        // Citas con Veterinario
+        findViewById<CardView>(R.id.citasLinearLayout).setOnClickListener {
+            val intent = Intent(this, CitasActivity::class.java)
+            intent.putExtra("mascota_id", mascotaId)
+            intent.putExtra("nombre_mascota", toolbar.title)
+            startActivity(intent)
+        }
+        // Alimentación
+        findViewById<CardView>(R.id.alimentacionLinearLayout).setOnClickListener {
+            val intent = Intent(this, AlimentacionActivity::class.java)
+            intent.putExtra("mascota_id", mascotaId)
+            //intent.putExtra("nombre_mascota", toolbar.title)
+            startActivity(intent)
+        }
+        // Paseos
+        findViewById<CardView>(R.id.paseosLinearLayout).setOnClickListener {
+            val intent = Intent(this, PaseosActivity::class.java)
+            intent.putExtra("mascota_id", mascotaId)
+            //intent.putExtra("nombre_mascota", toolbar.title)
+            startActivity(intent)
+        }
+        // Vacunas
         findViewById<CardView>(R.id.vacunasLinearLayout).setOnClickListener {
-            Toast.makeText(this, "Citas con Veterinario", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, VacunasActivity::class.java)
+            intent.putExtra("mascota_id", mascotaId)
+            //intent.putExtra("nombre_mascota", toolbar.title)
+            startActivity(intent)
         }
 
 
@@ -58,8 +83,10 @@ class DetallesMascotaActivity : AppCompatActivity() {
 
 
 
+
+
         // Recuperar el ID de la mascota
-        val mascotaId = intent.getIntExtra("mascota_id", -1)
+        mascotaId = intent.getIntExtra("mascota_id", -1)
 
         if (mascotaId != -1) {
             // Consultar la base de datos para obtener los detalles de la mascota
@@ -77,6 +104,33 @@ class DetallesMascotaActivity : AppCompatActivity() {
         }
     }
 
+    private val editarMascotaLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ){ result ->
+        if (result.resultCode == RESULT_OK){
+            val updatedMascotaId = result.data?.getIntExtra("mascota_id", -1) ?: -1
+            if (updatedMascotaId != -1) {
+                // Actualizar detalles con los nuevos datos
+                actualizarDetallesMascota(updatedMascotaId)
+            }
+        }
+
+    }
+
+    private fun actualizarDetallesMascota(mascotaId: Int) {
+        lifecycleScope.launch {
+            val mascota = withContext(Dispatchers.IO) {
+                PawPalDatabase.getDatabase(this@DetallesMascotaActivity)
+                    .mascotaDao()
+                    .getMascotaById(mascotaId)
+            }
+            mascota?.let {
+                mostrarDetallesMascota(it)
+            }
+        }
+    }
+
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_detalle_mascota, menu)
 
@@ -87,6 +141,10 @@ class DetallesMascotaActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.menu_editar -> {
                 // Navegar a la pantalla de edición
+                val intent = Intent(this, EditarMascotaActivity::class.java)
+                //Toast.makeText(this, "Mascota id de aca: ${mascotaId}", Toast.LENGTH_SHORT).show()
+                intent.putExtra("mascota_id",mascotaId)
+                editarMascotaLauncher.launch(intent)
 
                 return true
             }
@@ -148,6 +206,10 @@ class DetallesMascotaActivity : AppCompatActivity() {
 
 
     private fun mostrarDetallesMascota(mascota: Mascota) {
+        // Actualizar titulo del toolbar
+        supportActionBar?.title = mascota.nombre
+
+
         // Mostrar los datos de la mascota en la UI
         val tipoTextView: TextView = findViewById(R.id.tipoMascota)
         val razaTextView: TextView = findViewById(R.id.razaMascota)

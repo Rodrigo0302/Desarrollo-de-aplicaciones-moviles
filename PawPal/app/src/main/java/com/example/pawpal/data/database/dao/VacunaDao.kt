@@ -3,6 +3,7 @@ package com.example.pawpal.data.database.dao
 import androidx.room.*
 import com.example.pawpal.data.database.entities.Vacuna
 
+
 @Dao
 interface VacunaDao {
 

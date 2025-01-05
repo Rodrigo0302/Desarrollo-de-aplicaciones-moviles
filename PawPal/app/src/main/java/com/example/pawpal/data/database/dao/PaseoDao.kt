@@ -2,6 +2,7 @@ package com.example.pawpal.data.database.dao
 
 import androidx.room.*
 import com.example.pawpal.data.database.entities.Paseo
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface PaseoDao {
@@ -16,5 +17,5 @@ interface PaseoDao {
     suspend fun delete(paseo: Paseo)
 
     @Query("SELECT * FROM Paseo WHERE mascotaId = :mascotaId")
-    suspend fun getPaseosByMascota(mascotaId: Int): List<Paseo>
+    fun getPaseosByMascota(mascotaId: Int): Flow<List<Paseo>>
 }

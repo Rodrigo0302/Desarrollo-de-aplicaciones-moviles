@@ -1,4 +1,4 @@
-package com.example.pawpal
+package com.example.pawpal.utils
 
 import android.content.Context
 import android.content.SharedPreferences

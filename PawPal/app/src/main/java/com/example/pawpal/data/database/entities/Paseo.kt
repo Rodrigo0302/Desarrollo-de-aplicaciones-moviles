@@ -16,8 +16,10 @@ import androidx.room.PrimaryKey
 )
 data class Paseo(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
-    val duracion: Int,
+    val titulo: String,
+    val descripcion: String,
+    val duracion: String,
     val kmRecorridos: Double,
-    val fecha: String, // Tipo de dato LocalDate
+    val fecha: String,
     val mascotaId: Int
 )

@@ -21,6 +21,9 @@
     <string name="raza">Raza</string>
     <string name="modificar_mascota">Modificar Datos Mascota</string>
     <string name="eliminar_mascota">Eliminar Mascota</string>
+    <string name="boton_para_a_adir_citas">Boton para añadir citas</string>
+    <string name="agregar_citas">Agregar Citas</string>
+    <string name="citas_de_mascota">Citas De Mascota</string>
 
     <string-array name="spinner_items">
         <item>Perro</item>
@@ -29,4 +32,36 @@
         <item>Pajaro</item>
         <item>Otro</item>
     </string-array>
+
+    <string name="material_calendar_monday">L</string>
+    <string name="material_calendar_tuesday">MA</string>
+    <string name="material_calendar_wednesday">MI</string>
+    <string name="material_calendar_thursday">J</string>
+    <string name="material_calendar_friday">V</string>
+    <string name="material_calendar_saturday">S</string>
+    <string name="material_calendar_sunday">D</string>
+
+    <array name="material_calendar_months_array">
+        <item>Enero</item>
+        <item>Febrero</item>
+        <item>Marzo</item>
+        <item>Abril</item>
+        <item>Mayo</item>
+        <item>Junio</item>
+        <item>Julio</item>
+        <item>Agosto</item>
+        <item>Septiembre</item>
+        <item>Octubre</item>
+        <item>Noviembre</item>
+        <item>Diciembre</item>
+    </array>
+
+    <string name="material_calendar_today_button">Hoy</string>
+    <string name="material_calendar_positive_button">OK</string>
+    <string name="material_calendar_negative_button">Cancelar</string>
+    <string name="agregar_paseo">Agregar Paseo</string>
+    <string name="titulo">Titulo</string>
+    <string name="seleccionar_duraci_n_hh_mm_ss">Seleccionar Duración (HH:MM:SS)</string>
+    <string name="nombre_del_alimento">Nombre del Alimento</string>
+    <string name="nombre_de_la_vacuna">Nombre de la vacuna</string>
 </resources>

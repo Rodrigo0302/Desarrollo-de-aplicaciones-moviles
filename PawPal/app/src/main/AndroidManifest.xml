@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -15,6 +16,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PawPal"
         tools:targetApi="31">
+        <activity
+            android:name=".RegistroVacunaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistroAlimentoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VacunasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AlimentacionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistroPaseoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PaseosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistroCitaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CitasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditarMascotaActivity"
+            android:exported="false" />
         <activity
             android:name=".DetallesMascotaActivity"
             android:exported="false" />
@@ -36,6 +64,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".AlarmReceiver" />
     </application>
 
 </manifest>

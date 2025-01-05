@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".RegistroVacunaActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- Título -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/topBarColor"
+            android:minHeight="?attr/actionBarSize"
+            app:popupTheme="@style/CustomToolbarTheme"
+            app:titleTextColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="Registro de Vacunas"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintVertical_bias="1.0"
+            tools:layout_editor_absoluteX="0dp"
+            android:padding="16dp">
+
+
+
+            <!-- Nombre de la vacuna -->
+            <EditText
+                android:id="@+id/RegNombreVacunaEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/edit_text_background"
+                android:drawableStart="@drawable/ic_vacunas"
+                android:drawablePadding="8dp"
+                android:autofillHints=""
+                android:hint="@string/nombre_de_la_vacuna"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/material_dynamic_neutral50" />
+
+
+            <!-- Fecha -->
+            <EditText
+                android:id="@+id/RegFechaVacunaEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:autofillHints=""
+                android:background="@drawable/edit_text_background"
+                android:clickable="true"
+                android:drawableEnd="@drawable/ic_calendar_paseo"
+                android:drawablePadding="8dp"
+                android:focusable="false"
+                android:hint="Fecha de aplicación"
+                android:inputType="date"
+                android:maxLines="1"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/material_dynamic_neutral50" />
+
+            <!-- Botón de registro-->
+            <Button
+                android:id="@+id/registerVacunaButton"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="70dp"
+                android:backgroundTint="@color/topBarColor"
+                android:padding="12dp"
+                android:text="Registrar Vacuna"
+                android:textColor="@android:color/black" />
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
